@@ -6,7 +6,7 @@ const Navbar = () => {
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const {pathname} = useLocation()
+  const { pathname } = useLocation();
 
   const isActive = () =>
     window.scrollY > 0 ? setActive(true) : setActive(false);
@@ -50,12 +50,20 @@ const Navbar = () => {
                 <div className="options">
                   {currentUser.isSeller && (
                     <>
-                      <Link to="/mygigs" className="link">Gigs</Link>
-                      <Link to="/add" className="link">Add New Gig</Link>
+                      <Link to="/mygigs" className="link">
+                        Gigs
+                      </Link>
+                      <Link to="/add" className="link">
+                        Add New Gig
+                      </Link>
                     </>
                   )}
-                  <Link to="/orders" className="link">Orders</Link>
-                  <Link to="/messages" className="link">Messages</Link>
+                  <Link to="/orders" className="link">
+                    Orders
+                  </Link>
+                  <Link to="/messages" className="link">
+                    Messages
+                  </Link>
                   <Link className="link">Logout</Link>
                 </div>
               )}
@@ -63,41 +71,42 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      {active || pathname !== "/" && (
-        <>
-        <hr />
-        <div className="menu">
-          <Link className="link menuLink" to="/">
-            Graphics & Design
-          </Link>
-          <Link className="link menuLink" to="/">
-            Video & Animation
-          </Link>
-          <Link className="link menuLink" to="/">
-            Writing & Translation
-          </Link>
-          <Link className="link menuLink" to="/">
-            AI Services
-          </Link>
-          <Link className="link menuLink" to="/">
-            Digital Marketing
-          </Link>
-          <Link className="link menuLink" to="/">
-            Music & Audio
-          </Link>
-          <Link className="link menuLink" to="/">
-            Programming & Tech
-          </Link>
-          <Link className="link menuLink" to="/">
-            Business
-          </Link>
-          <Link className="link menuLink" to="/">
-            Lifestyle
-          </Link>
-        </div>
-        <hr />
-      </>
-      )}
+      {active ||
+        (pathname !== "/" && (
+          <>
+            <hr />
+            <div className="menu">
+              <Link className="link menuLink" to="/">
+                Graphics & Design
+              </Link>
+              <Link className="link menuLink" to="/">
+                Video & Animation
+              </Link>
+              <Link className="link menuLink" to="/">
+                Writing & Translation
+              </Link>
+              <Link className="link menuLink" to="/">
+                AI Services
+              </Link>
+              <Link className="link menuLink" to="/">
+                Digital Marketing
+              </Link>
+              <Link className="link menuLink" to="/">
+                Music & Audio
+              </Link>
+              <Link className="link menuLink" to="/">
+                Programming & Tech
+              </Link>
+              <Link className="link menuLink" to="/">
+                Business
+              </Link>
+              <Link className="link menuLink" to="/">
+                Lifestyle
+              </Link>
+            </div>
+            <hr />
+          </>
+        ))}
     </div>
   );
 };
